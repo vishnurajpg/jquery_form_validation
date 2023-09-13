@@ -1,0 +1,57 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#form{
+   border: 1px solid black;
+   display:inline-block;
+   border-left: -1px;
+   background-color:#ababab;
+   border-radius: 8px;
+   border: none;
+   width: 78%;
+}
+h2{
+    color: #fff243;
+}
+.pass{
+    margin-left: -25px;
+}
+.con{
+    margin-right: 91px;
+}
+.phone{
+    margin-right: 63px;
+}
+#sub{
+    padding: 8px;
+    background-color:rgb(234, 30, 139) ;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    transition-duration: 1s;
+}
+#sub:hover{
+    color: rgb(213, 222, 222);
+    background-color: black;
+}
+#name{
+    padding: 2px;
+}
+#pass{
+    padding: 2px;
+}
+#con_pass{
+    padding: 2px;
+}
+#gmail{
+    padding: 2px;
+}
+#phone{
+    padding: 2px;
+}
+.error{
+    color:rgb(8 36 255);
+    
+}
+  

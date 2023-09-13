@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+    body {
+    background-color: #AE76A6;
+    width: 100%;
+    height: 592px;
+   }
+    </style>
+</head>
+<body >
+  
+    <center><br>
+       <h2>Form Validation For jquery</h2><br>
+       <form action="" id="form" autocomplete="off" >
+            
+            <br><div>
+            <label for="">Name :</label>
+            <input type="text" name="name" id="name" placeholder = "enter name" >
+            <div class="error"></div>
+            </div><br> 
+
+            <div class="pass" >
+            <label for="">Password :</label>
+            <input type="text" name="pass" id="pass" placeholder = "enter password" >
+            <div class="error"></div>
+            </div>
+
+             <br><div class="con">
+            <label for="">Conform_ password :</label>
+            <input type="text" name="con_pass" id="con_pass" placeholder = "conform password" >
+            <div class="error"></div>
+            </div><br>
+            
+            <div>
+            <label for="">eamil :</label>
+            <input type="text" name="email" id="email" placeholder = "enter email" >
+            <div class="error"></div>
+            </div><br>
+            
+            <div class="contact">
+            <label for="">contact_number :</label>
+            <input type="text" name="contact" id="contact" placeholder = "enter contact number" >
+            <div class="error"></div>
+            </div><br>
+
+            <input type="submit" id="sub"><br>
+            
+            <br>
+        </form>
+        <script src="./jquery-validation-1.19.5/jquery.js"></script>
+        <script src="./jquery-validation-1.19.5/jquery.validate.js"></script>
+        <script>
+            $(document).ready(function(){
+               $.validator.setDefaults({
+                submitHandler: function(){
+                    alert("submited");
+                }    
+                });
+                $("#form").validate({
+                      rules:{
+                        name:"required",
+                        pass:{
+                             required:true,
+                             minlength:5
+                        },
+                        con_pass:{
+                            required:true,
+                            minlength:5,
+                            equalTo:"#pass"
+                        },
+                        email:{
+                            required:true,
+                            email:true
+                        },
+                        contact:{
+                            required:true,
+                            digits:true,
+                            minlength:10,
+                            maxlength:10
+                        }
+                        
+
+                       
+                      },
+                      messages:{
+                        name:"please enter name",
+                        pass:{
+                            required:"please enter password",
+                            pass:"enter minium length 5 "
+                        },
+                        con_pass:{
+                            required:"please enter conform-password",
+                            con_pass:"enter minium length 5 ",
+                            equalTo:"Enter same value.!"
+                        },
+                        email:{
+                            required:"please enter email",
+                            email:"please enter valid email id"
+                        },
+                        contact:{
+                            required:"enter number",
+                            digits:"only type number",
+                            minlength:"type 10 degits only",
+                            maxlength:"type again 10 degits "
+
+                        }
+                      }
+                });
+               
+            });
+        </script>
+    </center>
+</body>
+</html>
